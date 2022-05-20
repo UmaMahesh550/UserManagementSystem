@@ -1,16 +1,46 @@
-<h1>login</h1>
-<div>
-    <h1> Welcome </h1>
-     <h3>Login Here</h3>
-      <form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <br><h1><b>Login</b></h1><br>
+  <div>
+      <form #userLogin="ngForm" [formGroup]="loginForm" (ngSubmit)="login(userLogin.value)" [ngModel]>
         <div>
-          <label for="email">Email</label>
-          <input  required  type="text">
-          <label for="password">Password</label>
-          <input  type="password">
+          <table class="center">
+            <tr>
+              <td>
+                <label for="email">Username :</label>
+              </td>
+              <td>
+                <input type="email" name="email" placeholder="Enter your email id" formControlName="email" pattern="[a-zA-Z@.0-9]" [ngModel]><br>
+                <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span> -->
+                <br>
+              </td>
+            </tr><br>
+            <tr>
+              <td>
+                <label for="password">Password :</label>
+              </td>
+              <td>
+                <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]>
+                <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+                <br>
+              </td>
+            </tr>
+          </table>
+          <br><br>
+         
         </div>
-        <button>Submit</button>
-        <span>Don't have an account? 
-        <a routerLink="register">register</a></span>
+        <button class="btn btn secondary" (click)="login(userLogin.value)">Login</button><br><br>
+        <span>Don't have an account?
+        <a routerLink="register">Register</a></span>
+        
       </form>
   </div>
+</body>
+</html>

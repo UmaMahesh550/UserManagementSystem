@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FailComponent } from './fail/fail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ContactComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    FailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,54 @@
-<p>register works!</p>
-<div>
-    <h1>Hello Welcome </h1>
-      <h3>Create An Account</h3>
-       <form>
-         <div>
-           <label for="email">Email</label>
-           <input  required  type="text">
-           <label for="password">Password</label>
-           <input  type="password">
-         </div>
-         <button>Submit</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+</head>
+<body>
+  <div>
+    <router-outlet></router-outlet>
+      <h1><b>Create An Account</b></h1>
+       <form #userRegister="ngForm" [formGroup]="registerForm" (ngSubmit)="register(userRegister.value)" [ngModel]>
+        <table class="center">
+          <tr>
+            <td>
+              <label for="email">Username :</label>
+            </td>
+            <td>
+              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" pattern="[a-zA-Z@.0-9]" [ngModel]><br>
+              <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span> -->
+              <br>
+            </td>
+          </tr><br>
+          <tr>
+            <td>
+              <label for="password">Password :</label>
+            </td>
+            <td>
+              <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]>
+              <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">Confirm Password :</label>
+            </td>
+            <td>
+              <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]>
+              <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+              <br>
+            </td>
+          </tr>
+        </table><br><br>
+        <button class="btn btn secondary" (click)="register(userRegister.value)">Register</button><br>
+        <br>
          <span>Already have an account? 
-         <a routerLink="login">Register</a></span>
+         <a routerLink="login">Login</a></span>
+         <router-outlet></router-outlet>
        </form>
    </div>
+</body>
+</html>

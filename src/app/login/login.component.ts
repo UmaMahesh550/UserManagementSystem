@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginForm!: FormGroup
 
-  constructor(private formbuilder: FormBuilder,private http: HttpClient, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.loginForm = this.formbuilder.group({
-      email: [''],
-      password: ['', Validators.required]
-    })
   }
-  login(){
-    
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
+    password : new FormControl('',[Validators.required, Validators.minLength(5)]),
+  })
+  login(data:any){
+    // if(data.email==data.password)
   }
 
 }

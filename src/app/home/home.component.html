@@ -2,15 +2,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
     </head>
     <body class="container">
         
-        <img src="{{imageSrc}}">
-        <h1>Welcome</h1>
-        <a routerLink="about">About</a><br>
-        <router-outlet></router-outlet><br>
-        <a routerLink="login">Login</a><br>
-        <router-outlet></router-outlet><br>
-        <a routerLink="contact">Contact Information</a><br>
+        <br>
+        <button routerLink="contact">Contact</button>
+        <button routerLink="login">Login</button>
+        <button routerLink="about">About</button><br>
+        <h1>Welcome to our Application</h1><br>
         <router-outlet></router-outlet>
+        
     </body>
