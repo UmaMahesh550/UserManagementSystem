@@ -15,10 +15,10 @@
         <table class="center">
           <tr>
             <td>
-              <label for="email"></label>Username<label style="color: red;">* :</label>
+              <label for="email"></label>UserName<label style="color: red;">* :</label>
             </td>
             <td>
-              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [ngModel]><br>
+              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [(ngModel)="user.email"]><br>
               <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span>
             </td>
           </tr>
@@ -27,15 +27,23 @@
               <label for="name">Name :</label>
             </td>
             <td>
-              <input type="text" name="name" placeholder="Enter your name" formControlName="name" [ngModel]><br>
+              <input type="text" name="name" placeholder="Enter your name" formControlName="name" [(ngModel)="user.name"]><br>
             </td>
           </tr>
           <tr>
             <td>
-              <label for="name">Age :</label>
+              <label for="age">Age :</label>
             </td>
             <td>
-              <input type="number" name="age" placeholder="Enter your age" formControlName="age" [ngModel]><br>
+              <input type="number" name="age" placeholder="Enter your age" formControlName="age" [(ngModel)="user.age"]><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="status">status :</label>
+            </td>
+            <td>
+              <input type="number" name="status" placeholder="status" formControlName="status" [(ngModel)="user.status"]><br>
             </td>
           </tr>
           <tr>
@@ -43,7 +51,7 @@
               <label for="password">Password<label style="color: red;">*</label> :</label>
             </td>
             <td>
-              <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]><br>
+              <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [(ngModel)="user.password"]><br>
               <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span>
               <br>
             </td>
@@ -54,7 +62,7 @@
             </td>
             <td>
               <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]><br>
-              <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched" >This field is invalid.</span>
+              <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched && password!=confirmpassword" >Should match with above password.</span>
               <br>
             </td>
           </tr>

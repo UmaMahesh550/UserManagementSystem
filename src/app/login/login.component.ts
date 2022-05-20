@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
   })
   login(data:any){
     if(data.email==data.password)
-    {}
+    {
+      
+    }
   }
   register()
   {

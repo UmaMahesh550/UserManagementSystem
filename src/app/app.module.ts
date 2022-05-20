@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
 import { NopageComponent } from './nopage/nopage.component';
+import { UserListComponent } from './user-list/user-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { NopageComponent } from './nopage/nopage.component';
     NavbarComponent,
     SuccessComponent,
     NopageComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,7 @@ const routes: Routes = [
     ]
   },
   {
-    path:"app-success",
+    path:"success",
     component:SuccessComponent,
     children:[
       {path:'login', component:LoginComponent},
