@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NopageComponent } from './nopage/nopage.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   {
@@ -32,15 +33,15 @@ const routes: Routes = [
     // pathMatch:'full'
     children:[
       {path:'login',component:LoginComponent},
-      {path:'success', component:SuccessComponent},
     ]
   },
   {
     path:"success",
     component:SuccessComponent,
-    children:[
-      {path:'login', component:LoginComponent},
-    ]
+  },
+  {
+    path:"userlist",
+    component:UserListComponent,
   },
   {
     component:NopageComponent,

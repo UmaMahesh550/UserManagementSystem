@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
    console.warn(this.registerForm.value);
    if(data.password==data.confirmpassword)
    {
-     console.warn(data);
+     console.warn(this.user);
      this.userService.saveUser(data).subscribe((result)=>{
        console.warn(result);
      })
@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
    }
    else
    {
+     alert("Enter valid information");
      this.router.navigate(['register']);
    }
   }
