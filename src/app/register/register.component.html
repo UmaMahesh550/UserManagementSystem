@@ -9,45 +9,61 @@
 <body>
   <div>
     <router-outlet></router-outlet>
-      <h1><b>Create An Account</b></h1>
+    <br>
+      <h1><b>Create An Account</b></h1><br><br>
        <form #userRegister="ngForm" [formGroup]="registerForm" (ngSubmit)="register(userRegister.value)" [ngModel]>
         <table class="center">
           <tr>
             <td>
-              <label for="email">Username :</label>
+              <label for="email"></label>Username<label style="color: red;">* :</label>
             </td>
             <td>
-              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" pattern="[a-zA-Z@.0-9]" [ngModel]><br>
-              <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span> -->
-              <br>
+              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [ngModel]><br>
+              <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span>
             </td>
-          </tr><br>
+          </tr>
           <tr>
             <td>
-              <label for="password">Password :</label>
+              <label for="name">Name :</label>
             </td>
             <td>
-              <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]>
-              <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+              <input type="text" name="name" placeholder="Enter your name" formControlName="name" [ngModel]><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="name">Age :</label>
+            </td>
+            <td>
+              <input type="number" name="age" placeholder="Enter your age" formControlName="age" [ngModel]><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">Password<label style="color: red;">*</label> :</label>
+            </td>
+            <td>
+              <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]><br>
+              <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span>
               <br>
             </td>
           </tr>
           <tr>
             <td>
-              <label for="password">Confirm Password :</label>
+              <label for="password">Confirm Password<label style="color: red;">*</label> :</label>
             </td>
             <td>
-              <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]>
-              <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+              <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]><br>
+              <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched" >This field is invalid.</span>
               <br>
             </td>
           </tr>
         </table><br><br>
-        <button class="btn btn secondary" (click)="register(userRegister.value)">Register</button><br>
+        <button class="btn btn secondary" routerLink="success">Register</button><br>
         <br>
          <span>Already have an account? 
-         <a routerLink="login">Login</a></span>
-         <router-outlet></router-outlet>
+         <a (click)="login()">Login</a></span>
+         <!-- <router-outlet></router-outlet> -->
        </form>
    </div>
 </body>

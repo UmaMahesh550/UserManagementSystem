@@ -12,7 +12,9 @@ import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FailComponent } from './fail/fail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SuccessComponent } from './success/success.component';
+import { NopageComponent } from './nopage/nopage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { FailComponent } from './fail/fail.component';
     ContactComponent,
     RegisterComponent,
     NavbarComponent,
-    FailComponent
+    SuccessComponent,
+    NopageComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { FailComponent } from './fail/fail.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

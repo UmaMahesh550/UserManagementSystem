@@ -19,7 +19,17 @@ export class LoginComponent implements OnInit {
     password : new FormControl('',[Validators.required, Validators.minLength(5)]),
   })
   login(data:any){
-    // if(data.email==data.password)
+    if(data.email==data.password)
+    {}
   }
-
+  register()
+  {
+    this.router.navigate(['register'])
+  }
+  get email(){
+    return this.loginForm.get('email')
+  }
+  get password(){
+    return this.loginForm.get('password')
+  }
 }

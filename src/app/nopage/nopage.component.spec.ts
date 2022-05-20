@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FailComponent } from './fail.component';
+import { NopageComponent } from './nopage.component';
 
-describe('FailComponent', () => {
-  let component: FailComponent;
-  let fixture: ComponentFixture<FailComponent>;
+describe('NopageComponent', () => {
+  let component: NopageComponent;
+  let fixture: ComponentFixture<NopageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FailComponent ]
+      declarations: [ NopageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FailComponent);
+    fixture = TestBed.createComponent(NopageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { NopageComponent } from './nopage/nopage.component';
 import { RegisterComponent } from './register/register.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {
@@ -30,8 +32,20 @@ const routes: Routes = [
     // pathMatch:'full'
     children:[
       {path:'login',component:LoginComponent},
+      {path:'success', component:SuccessComponent},
     ]
   },
+  {
+    path:"app-success",
+    component:SuccessComponent,
+    children:[
+      {path:'login', component:LoginComponent},
+    ]
+  },
+  {
+    component:NopageComponent,
+    path:'**'
+  }
 ];
 
 @NgModule({

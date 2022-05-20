@@ -7,28 +7,26 @@
   <title>Login</title>
 </head>
 <body>
-  <br><h1><b>Login</b></h1><br>
-  <div>
+  <br><br><br><br><h1><b>Login</b></h1><br><br>
       <form #userLogin="ngForm" [formGroup]="loginForm" (ngSubmit)="login(userLogin.value)" [ngModel]>
         <div>
           <table class="center">
             <tr>
               <td>
-                <label for="email">Username :</label>
+                <label for="email">Username<label style="color: red;">*</label> :</label>
               </td>
               <td>
-                <input type="email" name="email" placeholder="Enter your email id" formControlName="email" pattern="[a-zA-Z@.0-9]" [ngModel]><br>
-                <!-- <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span> -->
-                <br>
+                <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [ngModel]><br>
+                <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span>
               </td>
             </tr><br>
             <tr>
               <td>
-                <label for="password">Password :</label>
+                <label for="password">Password<label style="color: red;">*</label> :</label>
               </td>
               <td>
-                <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]>
-                <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span> -->
+                <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [ngModel]><br>
+                <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span>
                 <br>
               </td>
             </tr>
@@ -38,9 +36,8 @@
         </div>
         <button class="btn btn secondary" (click)="login(userLogin.value)">Login</button><br><br>
         <span>Don't have an account?
-        <a routerLink="register">Register</a></span>
+        <a (click)="register()">Register</a></span>
         
       </form>
-  </div>
 </body>
 </html>
