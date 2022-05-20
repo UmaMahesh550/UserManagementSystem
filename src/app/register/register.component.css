@@ -33,3 +33,7 @@ button{
 span{
     font-size: medium;
 }
+img{
+    width: 40px;
+    background-color: white;
+}
