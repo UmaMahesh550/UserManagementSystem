@@ -11,14 +11,14 @@
     <router-outlet></router-outlet>
     <br>
       <h1><img src="assets/image9.png"><b>  Create An Account</b></h1><br><br>
-       <form #userRegister="ngForm" [formGroup]="registerForm" (ngSubmit)="register(userRegister.value)">
+       <form #userRegister="ngForm" [formGroup]="registerForm" (ngSubmit)="register(userRegister.value)" [ngModel]>
         <table class="center">
           <tr>
             <td>
               <label for="email"></label>UserName<label style="color: red;">* :</label>
             </td>
             <td>
-              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" pattern="[a-z@.]" [(ngModel)]="user.email"><br>
+              <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [(ngModel)]="user.email"><br>
               <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span>
             </td>
           </tr>
