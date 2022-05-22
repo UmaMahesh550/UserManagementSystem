@@ -2,7 +2,7 @@ export class User{
     id?: number;
     firstname?:string;
     lastname?:string;
-    roles?:String;
+    role?:String;
     age?:number;
     email?:string;
     password?:string;
@@ -12,7 +12,7 @@ export interface IUser{
     id : number,
     firstname : string,
     lastname : string,
-    roles : string,
+    role : string,
     age : number,
     email : string,
     password : string,
