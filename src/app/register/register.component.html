@@ -48,10 +48,12 @@
           </tr>
           <tr>
             <td>
-              <label for="status">status :</label>
+              <label for="role">Role :</label>
             </td>
             <td>
-              <input type="number" name="status" placeholder="status" formControlName="status" [(ngModel)]="user.status"><br>
+              <select name="role" formControlName="role" [(ngModel)]="user.roles">
+                <option value="USER">User</option>
+              </select><br>
             </td>
           </tr>
           <tr>
@@ -75,11 +77,10 @@
             </td>
           </tr>
         </table><br><br>
-        <button class="btn btn secondary" (click)="register(userRegister.value)">Register</button><br>
+        <button class="btn btn secondary" (click)="addUser()">Register</button><br>
         <br>
          <span>Already have an account? 
          <a (click)="login()">Login</a></span>
-         <!-- <router-outlet></router-outlet> -->
        </form>
    </div>
 </body>

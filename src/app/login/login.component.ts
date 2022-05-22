@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       // this.k=true;
       // this.email1=data.email;
       // this.newItemEvent.emit(this.k);
-      this.router.navigate(['userlist'])
+      this.router.navigate(['options'])
     }
     else{
       alert("Not Matched")

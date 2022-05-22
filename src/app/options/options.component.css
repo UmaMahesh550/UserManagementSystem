@@ -1,0 +1,12 @@
+
+button{
+    font-size: 20px;
+    float:inline-start;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-style:inset;
+    border-radius: 7px;
+    /* margin-left: auto; */
+    margin-right: 10px;
+    background-color:lightseagreen;
+    font-weight: bold;
+}

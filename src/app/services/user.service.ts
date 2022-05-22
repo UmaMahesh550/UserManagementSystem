@@ -8,6 +8,8 @@ import { IUser } from '../user';
 })
 export class UserService {
 
+  user2:any;
+
   url = "https://jsonplaceholder.typicode.com/todos/1";
   constructor(private http : HttpClient) { }
 
@@ -28,9 +30,18 @@ export class UserService {
   saveUser(data : any){
     const httpOptions = { headers:new HttpHeaders({ 'Content-Type':'application/json; charset=UTF-8'})};
     data = JSON.stringify(data)
-    return this.http.post("http://localhost:8080/addUser",data,httpOptions);
+    return this.http.post("http://localhost:8080/adduser",data,httpOptions);
   }
   users():Observable<IUser[]>{
-    return this.http.get<IUser[]>("http://localhost:8080/getAllUsers");
+    return this.http.get<IUser[]>("http://localhost:8080/getallusers");
+  }
+  // users(){
+  //   let response=this.http.get("http://localhost:8080/getAllUsers");
+  //   response.subscribe((data)=>this.user2=data);
+  // }
+  deleteUser(data:any){
+    const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json; charset=UTF-8'})}
+    data=JSON.stringify(data)
+    return this.http.delete("http://localhost:8080/deleteuser",data);
   }
 }

@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AdduserComponent } from './adduser/adduser.component';
 import { ContactComponent } from './contact/contact.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { LoginComponent } from './login/login.component';
 import { NopageComponent } from './nopage/nopage.component';
+import { OptionsComponent } from './options/options.component';
 import { RegisterComponent } from './register/register.component';
 import { SuccessComponent } from './success/success.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -44,9 +47,26 @@ const routes: Routes = [
     component:UserListComponent,
   },
   {
+    path:'options',
+    component:OptionsComponent,
+    children:[
+      {path:'userlist',component:UserListComponent},
+      {path:'adduser',component:AdduserComponent},
+      {path:'deleteuser',component:DeleteuserComponent}
+    ]
+  },
+  {
+    path:'adduser',
+    component:AdduserComponent,
+  },
+  {
+    path:'deleteuser',
+    component:DeleteuserComponent,
+  },
+  {
+    path:'**',
     component:NopageComponent,
-    path:'**'
-  }
+  },
 ];
 
 @NgModule({

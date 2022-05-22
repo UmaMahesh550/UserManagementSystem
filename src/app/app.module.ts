@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
 import { NopageComponent } from './nopage/nopage.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { OptionsComponent } from './options/options.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,9 @@ import { UserListComponent } from './user-list/user-list.component';
     SuccessComponent,
     NopageComponent,
     UserListComponent,
+    OptionsComponent,
+    AdduserComponent,
+    DeleteuserComponent,
   ],
   imports: [
     BrowserModule,

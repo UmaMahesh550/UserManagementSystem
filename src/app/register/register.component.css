@@ -37,3 +37,8 @@ img{
     width: 40px;
     background-color: white;
 }
+select{
+    width: 305px;
+    height: 30px;
+    background-color: white;
+}

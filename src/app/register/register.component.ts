@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   user: User = new User();
 
-  constructor( private router: Router,private userService:UserService) { }
+  constructor( private router: Router,private userService:UserService, private httpclient:HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -21,14 +21,18 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required]),
     password : new FormControl('',[Validators.required, Validators.minLength(5)]),
-    confirmpassword:new FormControl('',[Validators.required, Validators.minLength(5)])
+    confirmpassword:new FormControl('',[Validators.required, Validators.minLength(5)]),
+    firstname : new FormControl(),
+    lastname : new FormControl(),
+    age : new FormControl(),
+    role : new FormControl(),
   })
 
   register(data:any){
-   console.warn(this.registerForm.value);
+   console.warn(data);
    if(data.password==data.confirmpassword)
    {
-     console.warn(this.user);
+     console.warn(data);
      this.userService.saveUser(data).subscribe((result)=>{
        console.warn(result);
      })
