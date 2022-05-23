@@ -5,8 +5,14 @@ button{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-style:inset;
     border-radius: 7px;
+    border-width: 5px;
     /* margin-left: auto; */
     margin-right: 10px;
-    background-color:lightseagreen;
+    background-color:olive;
     font-weight: bold;
+    border-right-color:darkblue;
+    padding: 3px 15px 3px 15px;
+}
+botton:hover{
+    background-color:darkgreen;
 }

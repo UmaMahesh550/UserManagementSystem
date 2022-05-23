@@ -11,6 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessComponent } from './success/success.component';
@@ -43,6 +45,8 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatInputModule,
+    MatButtonModule,
     HttpClientModule
   ],
   providers: [],

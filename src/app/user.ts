@@ -1,5 +1,5 @@
 export class User{
-    id?: number;
+    userId?: number;
     firstname?:string;
     lastname?:string;
     role?:String;
@@ -9,7 +9,7 @@ export class User{
 }
 
 export interface IUser{
-    id : number,
+    userId : number,
     firstname : string,
     lastname : string,
     role : string,

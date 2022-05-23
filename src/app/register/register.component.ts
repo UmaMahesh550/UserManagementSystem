@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
+import { ConfirmedValidator } from './confirmed.validator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,22 +12,27 @@ import { User } from '../user';
 })
 export class RegisterComponent implements OnInit {
 
+  registerForm:FormGroup=new FormGroup({});
+
   user: User = new User();
 
-  constructor( private router: Router,private userService:UserService, private httpclient:HttpClient) { }
+  constructor( private router: Router,private userService:UserService, private httpclient:HttpClient, private formBuild:FormBuilder) {
+    this.registerForm = formBuild.group({
+    email: new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$',),]),
+    password : new FormControl('',[Validators.required, Validators.minLength(5)]),
+    confirmpassword:new FormControl('',[Validators.required, Validators.minLength(5)]),
+    firstname : new FormControl('',[Validators.required]),
+    lastname : new FormControl('',[Validators.required]),
+    age : new FormControl('',[Validators.required]),
+    role : new FormControl('',[Validators.required]),
+  },
+    {validator:ConfirmedValidator('password','confirmpassword')}
+   )}
 
   ngOnInit(): void {
   }
 
-  registerForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password : new FormControl('',[Validators.required, Validators.minLength(5)]),
-    confirmpassword:new FormControl('',[Validators.required, Validators.minLength(5)]),
-    firstname : new FormControl(),
-    lastname : new FormControl(),
-    age : new FormControl(),
-    role : new FormControl(),
-  })
+
 
   register(data:any){
    console.warn(data);
@@ -62,5 +68,8 @@ export class RegisterComponent implements OnInit {
 
   addUser(){
     console.warn(this.user);
+  }
+  get f(){
+    return this.registerForm.controls;
   }
 }

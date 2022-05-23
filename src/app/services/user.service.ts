@@ -40,8 +40,8 @@ export class UserService {
   //   response.subscribe((data)=>this.user2=data);
   // }
   deleteUser(data:any){
-    const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json; charset=UTF-8'})}
-    data=JSON.stringify(data)
-    return this.http.delete("http://localhost:8080/deleteuser",data);
+    // const httpOptions={headers:new HttpHeaders({'Content-Type':'application/json; charset=UTF-8'})}
+    // data=JSON.stringify(data)
+    return this.http.delete("http://localhost:8080/deleteuser?userId=" + data);
   }
 }

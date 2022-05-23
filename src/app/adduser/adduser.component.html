@@ -1,4 +1,3 @@
-<p>adduser works!</p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,8 @@
 <body>
     <br><br>
     <div>
+      <router-outlet></router-outlet>
+      <h2 *ngIf="k" routerLink="success">!!!!! Added Successfully !!!!!</h2>
           <h1><img src="assets/image11.jpg"><b>   Add a User</b></h1><br>
            <form #userAdd="ngForm" [formGroup]="addForm" (ngSubmit)="addUser(userAdd.value)" [ngModel]>
             <table class="center">
@@ -72,17 +73,15 @@
                 </td>
                 <td>
                   <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]><br>
-                  <span style="color: red;" *ngIf=" password!=confirmpassword && confirmpassword && confirmpassword.invalid && confirmpassword.touched" >Should match with above password.</span>
+                  <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched" >Should match with above password.</span>
                   <br>
                 </td>
               </tr>
             </table><br>
-            <button class="btn btn secondary" (click)="addUser(userAdd.value)">Add</button><br>
+            <button class="btn btn secondary" [disabled]="addForm.invalid" (click)="addUser(userAdd.value)">AddUser</button><br>
             <br>
            </form>
         </div>
-        <app-success *ngIf="k"></app-success>
-        <router-outlet></router-outlet>
 
 </body>
 </html>

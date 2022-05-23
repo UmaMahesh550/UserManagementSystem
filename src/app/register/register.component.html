@@ -63,6 +63,7 @@
             <td>
               <input  type="password" name="password" placeholder="Enter your password" formControlName="password" [(ngModel)]="user.password"><br>
               <span style="color: red;" *ngIf="password && password.invalid && password.touched" >This field is invalid.</span>
+              <span style="color: red;" *ngIf=""></span>
               <br>
             </td>
           </tr>
@@ -72,12 +73,12 @@
             </td>
             <td>
               <input  type="password" name="confirmpassword" placeholder="Re-Enter password" formControlName="confirmpassword" [ngModel]><br>
-              <span style="color: red;" *ngIf=" password!=confirmpassword && confirmpassword && confirmpassword.invalid && confirmpassword.touched" >Should match with above password.</span>
+              <span style="color: red;" *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched" >Should match with above password.</span>
               <br>
             </td>
           </tr>
         </table><br><br>
-        <button class="btn btn secondary" (click)="register(userRegister.value)">Register</button><br>
+        <button class="btn btn secondary" [disabled]="registerForm.invalid" (click)="register(userRegister.value)">Register</button><br>
         <br>
          <span>Already have an account? 
          <a (click)="login()">Login</a></span>

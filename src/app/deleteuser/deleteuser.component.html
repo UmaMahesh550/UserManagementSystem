@@ -7,26 +7,29 @@
     <title>Delete User</title>
 </head>
 <body>
+
     <div>
         <br><br>
         <router-outlet></router-outlet>
+        <h2 *ngIf="k" routerLink="success">!!!!! Deleted Successfully !!!!!</h2>
         <br>
         <h1><img src="assets/image10.jpg"><b>  Delete the User</b></h1><br><br>
         <form #userDel="ngForm" [formGroup]="delForm" (ngSubmit)="deleteUser(userDel.value)" [ngModel]>
             <table class="center">
                 <tr>
                     <td>
-                        <label for="id">Id<label style="color: red;">* </label>:</label>
+                        <label for="userId">Id<label style="color: red;">* </label>:</label>
                     </td>
                     <td>
-                        <input type="number" name="id" formControlName="id" placeholder="Enter the id" [(ngModel)]="user.id"><br>
+                        <input type="number" name="userId" formControlName="userId" placeholder="Enter the id" [(ngModel)]="user.userId"><br>
+                        <span style="color: red;" *ngIf="userId && userId.invalid && userId.touched"></span>
                     </td>
                 </tr>
             </table><br><br>
-            <button class="btn btn secondary" (click)="deleteUser(userDel.value)">Delete</button><br>
+            <button class="btn btn secondary" [disabled]="delForm.invalid" (click)="deleteUser(userDel.value)">Delete</button><br>
             <br>
         </form>
     </div>
-    <app-success *ngIf="k"></app-success>
+    <!-- <app-success *ngIf="k"></app-success> -->
 </body>
 </html>

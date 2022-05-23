@@ -10,24 +10,38 @@ import { User } from '../user';
 })
 export class DeleteuserComponent implements OnInit {
 
+  delForm:FormGroup|any;
+
   user: User = new User();
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService) {
+    this.delForm=new FormGroup({
+      userId:new FormControl('',[Validators.required]),
+    });
+   }
 
   public k=false;
-  @Output() newItemEvent = new EventEmitter();
   public email1:any;
+  @Output() newItemEvent = new EventEmitter();
 
   ngOnInit(): void {
   }
-  delForm=new FormGroup({
-    id:new FormControl('',[Validators.required])
-  })
+  // delForm=new FormGroup({
+  //   id:new FormControl('',[Validators.required])
+  // })
 
-  deleteUser(data:any){
+  deleteUser(data: any){
     console.warn(data);
-    this.userService.deleteUser(data);
+    this.k=true;
+    this.email1=data.email;
+    this.newItemEvent.emit(this.k);
+    this.userService.deleteUser(data.userId).subscribe(
+      (result)=>{console.warn(data);}
+      );
     console.warn(data);
   }
 
+  get userId(){
+    return this.delForm.get('userId')
+  }
 }

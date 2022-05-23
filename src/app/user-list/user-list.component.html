@@ -15,15 +15,17 @@
     <table class="center" >
         <thead>
             <tr>
+                <th>Id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Age</th>
                 <th>Role</th>
             </tr>
-        </thead><br>
+        </thead>
         <tbody>
             <tr *ngFor="let user of users">
+                <td>{{user.userId}}</td>
                 <td>{{user.firstname}}</td>
                 <td>{{user.lastname}}</td>
                 <td>{{user.email}}</td>

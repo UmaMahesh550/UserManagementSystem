@@ -5,9 +5,27 @@ table{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    border-width: 3px;
+    width: 80%;
+    border-collapse: collapse;
+
 }
+
 th{
-    font-size: 20px;
+    font-size: 17px;
+    border: 1px solid black;
+    padding-top:12px;
+    padding-bottom:12px;
+    text-align: center;
+    background-color: #006c45;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #bebebe;
+}
+td{
+    border: 1px solid black;
+    padding:8px;
 }
 h2{
     font-family: Georgia, 'Times New Roman', Times, serif;
