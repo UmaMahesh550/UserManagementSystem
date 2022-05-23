@@ -5,6 +5,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { ContactComponent } from './contact/contact.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { NopageComponent } from './nopage/nopage.component';
 import { OptionsComponent } from './options/options.component';
 import { RegisterComponent } from './register/register.component';
@@ -67,6 +68,10 @@ const routes: Routes = [
     path:'**',
     component:NopageComponent,
   },
+  {
+    path:'logout',
+    component:LogoutComponent
+  }
 ];
 
 @NgModule({

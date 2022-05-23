@@ -30,4 +30,16 @@ td{
 h2{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 25px;
+    text-align: center;
+}
+button{
+    padding: 5px 20px 5px 20px;
+    background-color:cadetblue;
+    color:black;
+    font-weight:900;
+    font-family:cursive;
+    border-color:bisque;
+    border-width: 3px;
+    border-style:outset;
+    border-radius: 8px;
 }

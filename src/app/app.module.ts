@@ -21,6 +21,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { OptionsComponent } from './options/options.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
+import { LogoutComponent } from './logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { DeleteuserComponent } from './deleteuser/deleteuser.component';
     OptionsComponent,
     AdduserComponent,
     DeleteuserComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

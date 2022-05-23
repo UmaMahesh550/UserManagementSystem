@@ -51,8 +51,8 @@ export class AdduserComponent implements OnInit {
     if(data.password==data.confirmpassword)
     {
       this.k=true;
-      this.email1=data.email;
-      this.newItemEvent.emit(this.k);
+      // this.email1=data.email;
+      // this.newItemEvent.emit(this.k);
       console.warn(data);
       this.userService.saveUser(data).subscribe((result)=>{
         console.warn(result);

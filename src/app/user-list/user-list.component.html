@@ -7,7 +7,9 @@
     <title>User-List</title>
 </head>
 <body>
-    <br><h2><b>Users</b></h2><br><br>
+    <br>
+
+    <h2><b>Users</b></h2><br><br>
     <!-- <p>FirstName-----------LastName------------email--------------age-------------role</p><br><br>
     <ul *ngFor="let user of users">
         <li>{{user.firstname}}-{{user.lastname}}--{{user.email}}--{{user.age}}--{{user.role}}</li><br>
@@ -21,6 +23,7 @@
                 <th>Email</th>
                 <th>Age</th>
                 <th>Role</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +34,13 @@
                 <td>{{user.email}}</td>
                 <td>{{user.age}}</td>
                 <td>{{user.role}}</td>
+                <td><button (click)="deleteUser(user.userId)">Delete</button></td>
+                <router-outlet></router-outlet>
             </tr>
         </tbody>
     </table>
+    <br>
+    <!-- <router-outlet></router-outlet> -->
+    <h2 *ngIf="k" routerLink="success">!!!!! Deleted Successfully !!!!!</h2><br><br>
 </body>
 </html>

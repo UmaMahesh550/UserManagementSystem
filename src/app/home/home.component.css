@@ -24,11 +24,24 @@ img{
 
   }
 button{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     float: right;
     margin-right: 10px;
     border-style: hidden;
     background-color: white;
+    border-width: 5px;
+}
+button:hover{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    float: right;
+    margin-right: 10px;
+    border-style:outset;
+    background-color:rgba(0, 132, 198, 0.712);
+    border-width: 0px;
+    border-radius: 6px;
+    padding: 4px 10px 4px 10px;
 }

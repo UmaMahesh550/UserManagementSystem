@@ -7,19 +7,28 @@
   <title>Login</title>
 </head>
 <body>
-  <br><br><br><br><h1><img src="assets/image6.png"><b>  Login</b></h1><br><br>
+  <br><br><br><br>
       <form #userLogin="ngForm" [formGroup]="loginForm" (ngSubmit)="login(userLogin.value)" [ngModel]>
-        <div>
+        <div><br>
           <table class="center">
             <tr>
+              <th colspan="2">
+                <h3><img src="assets/image6.png"><b>  Login</b></h3>
+              </th>
+            </tr><br>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
               <td>
-                <label for="email">Username<label style="color: red;">*</label> :</label>
+                <label for="email">Username<label style="color: red;">*</label>:</label>
               </td>
               <td>
                 <input type="email" name="email" placeholder="Enter your email id" formControlName="email" [ngModel]><br>
                 <span style="color: red;" *ngIf="email && email.invalid && email.touched">This field is invalid.</span>
               </td>
-            </tr><br>
+            </tr>
             <tr>
               <td>
                 <label for="password">Password<label style="color: red;">*</label> :</label>
